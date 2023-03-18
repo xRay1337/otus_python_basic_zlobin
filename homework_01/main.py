@@ -2,6 +2,7 @@
 Домашнее задание №1
 Функции и структуры данных
 """
+from math import factorial
 
 
 def power_numbers(*numbers):
@@ -29,10 +30,7 @@ def get_even_numbers(numbers_list):
 
 
 def is_prime_number(number):
-    for n in range(2, number // 2 + 1):
-        if (number % n) == 0:
-            return False
-    return True
+    return False if number < 2 else factorial(number - 1) % number == number - 1
 
 
 def get_prime_numbers(numbers):
