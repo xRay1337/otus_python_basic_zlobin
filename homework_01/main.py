@@ -33,8 +33,8 @@ def is_prime_number(number):
     return False if number < 2 else factorial(number - 1) % number == number - 1
 
 
-def get_prime_numbers(numbers):
-    return [number for number in numbers if is_prime_number(number)]
+def get_prime_numbers(numbers_list):
+    return [number for number in numbers_list if is_prime_number(number)]
 
 
 def filter_numbers(numbers, mode):
