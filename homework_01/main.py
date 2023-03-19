@@ -54,4 +54,4 @@ def filter_numbers(numbers, mode):
     """
     filter_function = get_filter_function_by_mode(mode)
 
-    return [number for number in numbers if filter_function(number)]
+    return list(filter(filter_function, numbers))
