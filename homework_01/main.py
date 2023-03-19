@@ -52,6 +52,5 @@ def filter_numbers(numbers, mode):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    filter_function = get_filter_function_by_mode(mode)
 
-    return list(filter(filter_function, numbers))
+    return list(filter(get_filter_function_by_mode(mode), numbers))
