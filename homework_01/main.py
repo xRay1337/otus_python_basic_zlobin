@@ -3,9 +3,10 @@
 Функции и структуры данных
 """
 from math import factorial
+from typing import Callable, List
 
 
-def power_numbers(*numbers):
+def power_numbers(*numbers: int) -> List[int]:
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
@@ -21,19 +22,19 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def is_odd_number(number):
+def is_odd_number(number: int) -> bool:
     return number % 2 != 0
 
 
-def is_even_number(number):
+def is_even_number(number: int) -> bool:
     return number % 2 == 0
 
 
-def is_prime_number(number):
+def is_prime_number(number: int) -> bool:
     return False if number < 2 else factorial(number - 1) % number == number - 1
 
 
-def get_filter_function_by_mode(mode):
+def get_filter_function_by_mode(mode: str) -> Callable[[int], bool]:
     return {
         "odd": is_odd_number,
         "even": is_even_number,
@@ -41,7 +42,7 @@ def get_filter_function_by_mode(mode):
     }.get(mode)
 
 
-def filter_numbers(numbers, mode):
+def filter_numbers(numbers: List[int], mode: str) -> List[int]:
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
